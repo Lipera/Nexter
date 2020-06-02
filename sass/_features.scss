@@ -1,4 +1,29 @@
 .features {
-  background-color: $color-grey-light-2;
   grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid; //Could use a subgrid here but it is not widely supported yet as of June 2020. It allows the nested grid to snap the columns to the parent grid. For more info see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid and https://caniuse.com/#search=grid-template-columns%3A%20subgrid
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); //Trick to have the columns responsive //rows are created through the implicit grid
+  gap: 6rem;
+  align-items: start; //aligns each feature vertically so that there is no margin difference between heading and text if the latter is smaller than other feature blocks
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 1.5rem 2.5rem;
+
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    grid-row: 1 / span 2; //not -1 because it represents the end of the explicit grid and since we didn't specify rows, we don't really have an explicit grid
+    transform: translateY(-1rem); //to align with the feature heading
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
 }
