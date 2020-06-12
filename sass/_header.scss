@@ -1,4 +1,56 @@
 .header {
   background-color: $color-grey-dark-1;
   grid-column: full-start / col-end 6;
+  background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content; //needed so that Nexter logo appears centered in relation to the rest of the texts and logos
+  justify-content: center;
+  gap: 1.5rem;
+
+  &__logo {
+    height: 3rem;
+    justify-self: center;
+  }
+
+  &__btn {
+    align-self: start;
+    justify-self: start; //These 2 lines make btn be centered to the up left corner of the grid cell
+  }
+
+  &__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    column-gap: 1.5rem;
+
+    font-size: 1.6rem;
+    color: $color-grey-light-2;
+
+    &::before,
+    &::after { //innerHtml, before and after pseudo elements can be treated as grid elements and are here used to make the fancy lines around the "Seen on" text
+      content: "";
+      display: block;
+
+      height: 1px;
+      background-color: currentColor;
+    }
+  }
+
+  &__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    column-gap: 3rem;
+
+    img {
+      height: 2.5rem;
+      filter: brightness(70%);
+    }
+  }
 }
