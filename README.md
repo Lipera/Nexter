@@ -12,4 +12,4 @@ The layout used is, of course, CSS Grid, with a few Flexbox containers in the mi
 ![Housing](readme-imgs/housing.png)
 ![Image Gallery](readme-imgs/image-gallery.png)
 
-> Original project and design guidelines credited to [Jonas Schemedtmann](jonas.io) from his [Udemy course](https://www.udemy.com/course/advanced-css-and-sass/).
+> Original project and design guidelines credited to [Jonas Schemedtmann](https://codingheroes.io/) from his [Udemy course](https://www.udemy.com/course/advanced-css-and-sass/).
